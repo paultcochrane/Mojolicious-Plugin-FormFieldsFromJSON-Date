@@ -9,7 +9,7 @@ install:
   - cd C:\projects\%APPVEYOR_PROJECT_SLUG%
   - cpanm --notest Dist::Zilla || type C:\Users\appveyor\.cpanm\build.log ; perl -e "exit 1"
   - dzil authordeps --missing | cpanm --notest || type C:\Users\appveyor\.cpanm\build.log ; perl -e "exit 1"
-  - dzil listdeps --author --missing | cpanm --notest || type C:\Users\appveyor\.cpanm\build.log ; perl -e "exit 1"
+  - dzil listdeps --author --missing | cpanm || type C:\Users\appveyor\.cpanm\build.log ; perl -e "exit 1"
 
 build_script:
   - dzil test --author --release
